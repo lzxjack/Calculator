@@ -1,4 +1,41 @@
 $(function() {
+    // --------模块拖拽功能-----------------------------------------------
+    // 按钮打开功能
+    $(".cal-btn").on("click", function() {
+        $(".bg").css("display", "block");
+        $(".Calculator").css("display", "block");
+        $(".tips").css("display", "block");
+    });
+
+    // 关闭计算器功能
+    $(".close").on("click", function() {
+        $(".bg").css("display", "none");
+        $(".Calculator").css("display", "none");
+        $(".tips").css("display", "none");
+    });
+
+    var header = document.querySelector(".header");
+    var Calculator = document.querySelector(".Calculator");
+    // 拖动功能
+    header.addEventListener('mousedown', function(e) {
+        // 鼠标按下对话框顶部时，获取鼠标到对话框的距离
+        let x = e.pageX - Calculator.offsetLeft;
+        let y = e.pageY - Calculator.offsetTop;
+        // 鼠标按下并移动时，实时更新对话框的位置
+        document.addEventListener('mousemove', move);
+
+        function move(e) {
+            Calculator.style.left = e.pageX - x + 'px';
+            Calculator.style.top = e.pageY - y + 'px';
+        }
+        // 鼠标松开时，移除拖拽的动作
+        document.addEventListener('mouseup', function() {
+            document.removeEventListener('mousemove', move);
+        });
+    });
+
+
+    // --------计算器功能-------------------------------------------------
     let equation = '';
 
     // 将字符显示在显示区的函数
@@ -7,6 +44,12 @@ $(function() {
         // 将显示区域中“/”和“*”替换为“÷”和“×”
         str = equation.replace(/\//g, '÷').replace(/\*/g, '×');
         $(".display").html(str);
+    }
+
+    // 实现退格的函数
+    function deleteOne() {
+        equation = equation.substring(0, equation.length - 1);
+        replaceDisplay();
     }
 
     $(".AC").on("click", function() {
@@ -128,19 +171,26 @@ $(function() {
         if ($(".display").html().length > 11 && $(".display").html().length < 17) {
             $(".display").css("font-size", "40px");
         } else if ($(".display").html().length > 17 || $(".display").html().length === 17) {
-            $(".display").html('数值过大!');
+            $(".display").css("font-size", "30px");
+            // $(".display").html('数值过大!');
             // -------------------------BUG---------------------------
             // 显示'数值过大!'后不能直接输入数字
-            equation = '';
+            // equation = '';
         } else {
             $(".display").css("font-size", "60px");
         }
     });
 
+
     // 监听键盘
     $(document).keydown(function(e) {
+        // console.log(e.keyCode);
         switch (e.keyCode) {
-            // 清零（ESC）
+            // 退格
+            case 8:
+                deleteOne();
+                break;
+                // 清零（ESC）
             case 27:
                 $(".AC").click();
                 break;
