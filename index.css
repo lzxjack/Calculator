@@ -1,0 +1,142 @@
+div {
+    /* 所有元素禁止选中文本 */
+    user-select: none;
+}
+
+.Calculator {
+    /* 计算器大盒子 */
+    position: relative;
+    width: 416px;
+    height: 664px;
+    background-color: #000;
+    border-radius: 44px;
+    overflow: hidden;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, .3);
+}
+
+.header {
+    /* 头部拖动栏 */
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+}
+
+.close {
+    /* 拖动栏中的关闭按钮 */
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .7) inset;
+}
+
+.displayBox {
+    width: 100%;
+    height: 104px;
+    background-color: #000;
+}
+
+.display {
+    /* 输入的数字显示区域 */
+    width: 96%;
+    height: 104px;
+    font-size: 60px;
+    color: #fff;
+    line-height: 104px;
+    text-align: right;
+}
+
+.btns {
+    /* 按钮大盒子 */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.border {
+    /* 每个按钮的边框盒子 */
+    position: relative;
+    width: 104px;
+    height: 104px;
+    background-color: #000;
+}
+
+.btn {
+    /* 每个圆形按钮 */
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    line-height: 88px;
+    background-color: #333;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.zero-border {
+    /* 按钮0的边框 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 208px;
+    height: 104px;
+    background-color: #000;
+}
+
+.zero-btn {
+    /* 按钮0 */
+    width: 192px;
+    height: 88px;
+    border-radius: 44px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    /* text-align: left; */
+    /* padding-left: 50px; */
+    line-height: 88px;
+    background-color: #333;
+}
+
+.gray {
+    /* 灰色的按钮 */
+    background-color: #A6A6A6;
+    color: #000;
+    font-weight: 700;
+    font-size: 34px;
+}
+
+.yellow {
+    /* 黄色的按钮 */
+    background-color: #FF9F18;
+    font-weight: 700;
+    font-size: 44px;
+}
+
+.zero-btn:hover,
+.btn:hover {
+    background-color: #29E3F5;
+}
+
+.zero-btn:active,
+.btn:active {
+    background-color: #00717C;
+}
