@@ -172,10 +172,6 @@ $(function() {
             $(".display").css("font-size", "40px");
         } else if ($(".display").html().length > 17 || $(".display").html().length === 17) {
             $(".display").css("font-size", "30px");
-            // $(".display").html('数值过大!');
-            // -------------------------BUG---------------------------
-            // 显示'数值过大!'后不能直接输入数字
-            // equation = '';
         } else {
             $(".display").css("font-size", "60px");
         }
@@ -256,16 +252,4 @@ $(function() {
                 break;
         }
     });
-
-
-    // -------------------------BUG---------------------------
-    // 1. 显示'数值过大!'后不能直接输入数字
-    // 2. 0.1+0.2=0.3000000000...
-    // 3. 没有键盘按下的效果。键盘按下的效果应与鼠标按下一致
-
-
-    // a = '一二三四五';
-    // b = '12345';
-    // console.log(a.length);
-    // console.log(b.length);
 });
