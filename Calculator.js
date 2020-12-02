@@ -156,7 +156,7 @@ $(function() {
                 if (reg.test(String(eval(equation)))) {
                     $(".display").html('无意义!');
                 } else {
-                    $(".display").html(parseFloat(eval(equation)));
+                    $(".display").html(parseFloat(eval(equation).toFixed(10)));
                 }
                 equation = '';
             } catch {
