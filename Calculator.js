@@ -156,6 +156,7 @@ $(function() {
                 if (reg.test(String(eval(equation)))) {
                     $(".display").html('无意义!');
                 } else {
+                    // parseFloat((0.1 + 0.2).toFixed(10))解决小数精度问题
                     $(".display").html(parseFloat(eval(equation).toFixed(10)));
                 }
                 equation = '';
