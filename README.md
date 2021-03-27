@@ -1,7 +1,7 @@
 # 基于jQuery的仿IOS14计算器
 
 ## 实现效果：
-<a href="https://jacklzx.github.io/Calculator/Calculator.html" target="_blank">[→点击此处预览效果←]</a>
+<a href="https://bird999.gitee.io/calculator/" target="_blank">[→点击此处预览效果←]</a>
 1. 点击`Calculator`按钮，打开计算器。
 2. 打开计算器后，左边一栏是对于键盘操作的提示信息。
 3. 按住计算器顶部并移动，可以实现拖拽计算器功能。
